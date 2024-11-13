@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="title">Password Generator</h1>
+            <div class="language-selector">
+                <label for="language">Choose Language:</label>
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <!-- Add more languages as needed -->
+                </select>
+            </div>
+            <div class="theme-selector">
+                <label for="theme">Choose Theme:</label>
+                <select id="theme">
+                    <option value="default">Default</option>
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                </select>
+            </div>
+            
+        </header>
+        <main class="generator">
+            <input type="text" id="password-display" readonly placeholder="Your password will appear here">
+            <button id="copy">Copy</button>
+            <div class="options">
+                <label>
+                    <input type="checkbox" id="uppercase" checked> Uppercase
+                    <span class="tooltip">Include uppercase letters (A-Z)</span>
+                </label>
+                <label>
+                    <input type="checkbox" id="lowercase" checked> Lowercase
+                    <span class="tooltip">Include lowercase letters (a-z)</span>
+                </label>
+                <label>
+                    <input type="checkbox" id="numbers" checked> Numbers
+                    <span class="tooltip">Include numbers (0-9)</span>
+                </label>
+                <label>
+                    <input type="checkbox" id="symbols"> Symbols
+                    <span class="tooltip">Include symbols (!@#$%^&*)</span>
+                </label>
+                <label>
+                    <input type="checkbox" id="exclude-similar"> Exclude Similar Characters
+                    <span class="tooltip">Exclude characters like 'O', '0', 'I', 'l'</span>
+                </label>
+                <label>
+                    <input type="checkbox" id="custom-pattern"> Use Custom Pattern
+                    <span class="tooltip">Define a custom pattern for password generation</span>
+                </label>
+                <input type="text" id="custom-symbols" placeholder="Enter custom symbols">
+            </div>
+            <div class="length-slider">
+                <label>Password Length: <span id="length-display">12</span></label>
+                <input type="range" id="length" min="8" max="20" value="12">
+            </div>
+            <button id="generate">Generate Password</button>
+            <div class="strength-meter">
+                <div id="strength-bar" class="strength-bar"></div>
+            </div>
+            <div id="feedback" class="feedback"></div>
+            <div class="password-history">
+                <h2>Password History</h2>
+                <ul id="history-list"></ul>
+            </div>
+            <div class="strength-suggestions">
+                <h2>Password Strength Suggestions</h2>
+                <ul id="suggestions-list"></ul>
+            </div>
+            <div class="real-time-feedback">
+                <p id="real-time-message"></p>
+            </div>
+            <div class="complexity-meter">
+                <h2>Password Complexity</h2>
+                <div class="complexity-bar" id="complexity-bar"></div>
+            </div>
+        </main>
+        <footer>
+            <p>Created by SAYEM X ZRP</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
